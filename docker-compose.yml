@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  server:
+    container_name: php70-http-server
+    build: .
+    volumes:
+      - ./www:/var/www
+    ports:
+      - "8080:8080"
+    command: ["php", "-S", "0.0.0.0:8080", "-t", "/var/www/"]
